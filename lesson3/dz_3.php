@@ -67,7 +67,7 @@ $arrayTransliterations = [
 //}
 //echo transliteration ($templateString, $arrayTransliterations);
 //*********************************************//
-function getTransliterations ($templateString, $arrayTransliterations) {
+function getTransliterations (string $templateString, array $arrayTransliterations) : string {
     $templateStringLower = mb_strtolower ($templateString);
     $arrayTemplateString = mb_str_split ($templateStringLower);
     foreach ($arrayTemplateString as &$symbol) {
