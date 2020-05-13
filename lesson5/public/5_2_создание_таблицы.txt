@@ -1,0 +1,11 @@
+2. В базе данных создать таблицу, в которой будет храниться информация о картинках (адрес на сервере, размер, имя).
+
+CREATE SCHEMA `shop` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+use shop;
+CREATE TABLE `shop`.`gallery` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name_image` VARCHAR(128) NOT NULL,
+	`link` VARCHAR(128) NOT NULL,
+	`size` INT(11) NOT NULL,
+	`views_counter` INT(11) NULL,
+	PRIMARY KEY (`id`));
