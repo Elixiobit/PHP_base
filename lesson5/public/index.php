@@ -14,20 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $filename = $directoryImg . $_FILES['id']['name'];
     uploadFile($filename, 'id');
-    addSQL($_FILES['id']['name'], $filename, $_FILES['id']['size']);
+    addSQL($_FILES['id']['name'], $_FILES['id']['name'], $_FILES['id']['size']);
     redirect('/index.php');
 }
-$id = $_GET['id'];
+//$id = $_GET['id'];
 
-$images = getImagesList($directoryImg);
+//$images = getImagesList($directoryImg);
 
 $connectMySQL = mysqli_connect("127.0.0.1", "root", "root", "shop");
 
 
-$sql = "SELECT link FROM gallery WHERE id = {$id}";
-
-$res = mysqli_query($connectMySQL, $sql);
-
+$sql = "SELECT * FROM gallery";
+$images = mysqli_fetch_all(mysqli_query($connectMySQL, $sql), MYSQLI_ASSOC);
 
 mysqli_close($connectMySQL);
 

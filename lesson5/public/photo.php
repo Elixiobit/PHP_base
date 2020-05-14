@@ -1,3 +1,5 @@
 <?php
 $id = $_GET['id'];
-var_dump($id);
+//var_dump($id);
+
+?>
