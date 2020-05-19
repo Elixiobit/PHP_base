@@ -6,9 +6,14 @@ function getGalleryFiles() {
     return queryAll($sql);
 }
 
-function saveReviews(string $review, int $id) {
-    $sql = "UPDATE `shop`. `product` SET reviews = '{$review}' WHERE  `id` = {$id}";
+function saveReviews(string $name, string $commit, int $id) {
+    $sql = "INSERT INTO reviews (`product_id`, `name_user`, `review`) VALUES  ({$id}, '{$name}', '{$commit}')";
     return execute($sql);
+}
+
+function getReviews(int $id) {
+    $sql = "SELECT * FROM reviews WHERE product_id = {$id}";
+    return queryAll($sql);
 }
 
 function getImage(int $id) {

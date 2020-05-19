@@ -9,8 +9,8 @@ $fileInclude = 'product.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = post("name");
     $commit = post('commit');
-    $review = $name . ":" . "\n" . $commit . "\n" . "\n";
-    saveReviews($review, $id);
+    saveReviews($name, $commit, $id);
 }
+$reviews = getReviews ($id);
 include VIEWS_DIR . 'main.php'
 ?>
