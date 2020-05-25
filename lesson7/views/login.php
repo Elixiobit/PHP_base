@@ -1,6 +1,7 @@
 <div class="login">
     <form action="" method="post">
-        <h3>sign on</h3>
+        <h3>sign in</h3>
+        <h4><?= $resultAuth ?></h4>
         <br>
         <h4>Login:</h4>
         <p><input type="text"name="login"></p>

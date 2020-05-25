@@ -147,6 +147,11 @@ body {
 .auth_button:active{
     box-shadow: none;
 }
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+}
 span{
     color: #212121;
     font-size: 36px;

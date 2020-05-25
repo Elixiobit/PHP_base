@@ -12,13 +12,13 @@ if (!isset($_SESSION['user_id'])) {
         $user = getUserByLogin($login);
         if ($user && $user['password'] == getHash($password)){
             $_SESSION['user_id'] = $user['id'];
-            echo "OK";
+            redirect('account.php');
         }else {
-            echo "no OK";
+            $resultAuth = "Повторите попытку";
         }
 
     }
-
 }
+
 $fileInclude = VIEWS_DIR . 'login.php';
 include VIEWS_DIR . 'main.php';

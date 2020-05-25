@@ -3,21 +3,31 @@ require_once __DIR__ . '\..\config\main.php';
 require ENGINE_DIR . "gallery.php";
 require ENGINE_DIR . "base.php";
 session_start();
-if (isset($_SESSION['user_id'])) {
+if (!empty(session('user_id'))) {   //  проверка auth.
     $id = get('id');
-    $image = getImage($id);
+    $image = getImage((int)$id);
     $fileInclude = VIEWS_DIR . 'product.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name = post("name");
-        $commit = post('commit');
-        saveReviews((string)$name, (string)$commit, $id);
+        if (!empty(post('name'))) {
+            $name = post("name");
+            $commit = post('commit');
+            saveReviews((string)$name, (string)$commit, $id); // сохраняетв комментарий в БД
+        }
+        if (!empty(post('order')) && empty(session('product_id'))) {
+            $_SESSION['product_id'] = [$id];
 
+        } else {
+            array_push($_SESSION['product_id'], $id);
+
+        }
     }
-    $reviews = getReviews($id);
+
+    $reviews = getReviews((int)$id);
+    include VIEWS_DIR . 'main.php';
+//    redirect("product.php");
 //$content = render("product", ['product' => $product]);
 //echo render('layout', ['content' => $content]);
-    include VIEWS_DIR . 'main.php';
-} else{
+} else {
     redirect("login.php");
 }
 ?>

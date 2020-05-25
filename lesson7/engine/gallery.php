@@ -20,3 +20,6 @@ function getImage(int $id) {
     $sql = "SELECT * FROM product WHERE id = {$id}";
     return queryOne($sql);
 }
+
+
+

@@ -8,3 +8,7 @@ function saveUser(string $login, string $password) {
 function getUserByLogin($login) {
     return  queryOne("SELECT * FROM users WHERE login = '{$login}'");
 }
+
+function getUserById($id) {
+    return  queryOne("SELECT * FROM users WHERE id = '{$id}'");
+}

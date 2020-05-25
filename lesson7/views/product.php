@@ -1,6 +1,3 @@
-<?php
-?>
-
 <div class="main">
     <div class="image-main">
         <img src="/img/<?= $image['path'] ?>" alt="">
@@ -9,7 +6,7 @@
         <h3><?= $image['name_product'] ?></h3>
         <p class="cost">$ <span><?= $image['cost'] ?></span>/sq</p>
         <form action="" method="post">
-            <input class="button button-text" type="submit" value="Order Us" name="order" >
+            <input class="button button-text" type="submit" value="Order Us" name="order">
 
         </form>
 
@@ -27,7 +24,8 @@
 <div class="touch">
     <form action="" enctype="multipart/form-data" method="post">
         <label> Имя
-            <input type="text" size="30" placeholder="Ваше имя" name="name"> </label>
+            <input type="text" size="30" placeholder="Ваше имя" name="name">
+        </label>
         <br>
         <label> Оставте комментарий <br>
             <textarea name="commit" id="" cols="100" rows="10"></textarea>

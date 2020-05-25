@@ -15,7 +15,7 @@ $yearNow = date('Y');
     <div class="header">
         <a href="/index.php"><img src="/img/logo.svg" alt="logo"></a>
         <ul class="menu-top">
-            <li class="top-list1"><a href="/login.php" class="top-link">personal account</a></li>
+            <li class="top-list1"><a href="/account.php" class="top-link">personal account</a></li>
             <li class="top-list3"><a href="/index.php" class="top-link">SHOWROOM</a></li>
             <li class="top-list3"><a href="/cart.php" class="top-link">cart</a></li>
         </ul>
